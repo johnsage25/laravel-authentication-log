@@ -16,8 +16,9 @@ Laravel Authentication Log is a package which tracks your user's authentication 
 
 You may use Composer to install Laravel Authentication Log into your Laravel project:
 
-   composer require Pearldrift/laravel-authentication-log
-   composer require torann/geoip
+      composer require pearldrift/laravel-authentication-log
+      
+      composer require torann/geoip
 
 ### Configuration
 
