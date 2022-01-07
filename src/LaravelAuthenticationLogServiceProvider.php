@@ -1,6 +1,6 @@
 <?php
 
-namespace Rappasoft\LaravelAuthenticationLog;
+namespace Pearldrift\LaravelAuthenticationLog;
 
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\Events\Login;
