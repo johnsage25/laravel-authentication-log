@@ -23,22 +23,22 @@ You may use Composer to install Laravel Authentication Log into your Laravel pro
 
 After installing the Laravel Authentication Log, publish its config, migration and view, using the `vendor:publish` Artisan command:
 
-    php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-migrations"
+      php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-migrations"
 
 
 Next, you need to migrate your database. The Laravel Authentication Log migration will create the table your application needs to store authentication logs:
 
-    php artisan migrate
+       php artisan migrate
     
 You can publish the view/email files with:
     
-    php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-views"
+      php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-views"
 
 Finally, add the `AuthenticationLogable` and `Notifiable` traits to your authenticatable model (by default, `App\User` model). These traits provides various methods to allow you to get common authentication log data, such as last login time, last login IP address, and set the channels to notify the user when login from a new device:
 
 You can publish the config file with:
   
-  php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-config"
+         php artisan vendor:publish --provider="Pearldrift\LaravelAuthenticationLog\LaravelAuthenticationLogServiceProvider" --tag="authentication-log-config"
   
 This is the contents of the published config file:
   
@@ -67,7 +67,7 @@ This is the contents of the published config file:
                   'location' => true,
 
                   // The Notification class to send
-                  'template' => \Rappasoft\LaravelAuthenticationLog\Notifications\NewDevice::class,
+                  'template' => \Pearldrift\LaravelAuthenticationLog\Notifications\NewDevice::class,
               ],
               'failed-login' => [
                   // Send the FailedLogin notification
@@ -77,7 +77,7 @@ This is the contents of the published config file:
                   'location' => true,
 
                   // The Notification class to send
-                  'template' => \Rappasoft\LaravelAuthenticationLog\Notifications\FailedLogin::class,
+                  'template' => \Pearldrift\LaravelAuthenticationLog\Notifications\FailedLogin::class,
               ],
           ],
 
@@ -95,7 +95,7 @@ If you installed torann/geoip you should also publish that config file to set yo
 You must add the **AuthenticationLoggable** and **Notifiable** traits to the models you want to track.
     
     use Illuminate\Notifications\Notifiable;
-    use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
+    use Pearldrift\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
     use Illuminate\Foundation\Auth\User as Authenticatable;
 
     class User extends Authenticatable
